@@ -10,19 +10,12 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      video : [],
-      selectedVideo : null
+
     }
   }
-  handleSearchSubmit = async (searchTerm) =>{
-    const response = await youtube.get('search', {params : {
-      part : 'snippet',
-      maxResults : 5,
-      key : 'AIzaSyDuFhEMbYxVL7N1XO5-lyJ9gapmkVMJtxw',
-      q: searchTerm
-  },
-  })
-    this.setState({video : response.data.item})
+  handleSearchSubmit = async(searchTerm) =>{
+    const response = await youtube.get('search', {params : {q : searchTerm}})
+    console.log(response)
   }
   render(){
     return (

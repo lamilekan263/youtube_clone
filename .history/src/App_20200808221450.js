@@ -22,7 +22,7 @@ class App extends Component {
       q: searchTerm
   },
   })
-    this.setState({video : response.data.item})
+    this.setState({video : response})
   }
   render(){
     return (

@@ -10,8 +10,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      video : [],
-      selectedVideo : null
+
     }
   }
   handleSearchSubmit = async (searchTerm) =>{
@@ -22,7 +21,7 @@ class App extends Component {
       q: searchTerm
   },
   })
-    this.setState({video : response.data.item})
+    console.log(response)
   }
   render(){
     return (
