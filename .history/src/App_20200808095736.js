@@ -13,16 +13,15 @@ class App extends Component {
 
     }
   }
-  handleSearchSubmit = async(searchTerm) =>{
-    const response = await youtube.get('search', {params : {q : searchTerm}})
-    console.log(response)
+  handleSearchSubmit = (searchTerm) =>{
+
   }
   render(){
     return (
       <div className="App">
-        <Grid justify= "center" container spacing={10}>
+        <Grid justify= "center" container spacing={16}>
           <Grid item xs={12}>
-            <Grid container spacing={10}>
+            <Grid container spacing={16}>
               <Grid item xs={12}>
                 <SearchBar onsearchSubmit = {this.handleSearchSubmit} />
               </Grid>

@@ -20,9 +20,9 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <Grid justify= "center" container spacing={10}>
+        <Grid justify= "center" container spacing={16}>
           <Grid item xs={12}>
-            <Grid container spacing={10}>
+            <Grid container spacing={16}>
               <Grid item xs={12}>
                 <SearchBar onsearchSubmit = {this.handleSearchSubmit} />
               </Grid>

@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import { Grid } from '@material-ui/core'
 import youtube from './api/youtube'
 
-import SearchBar from './components/SearchBar'
-import VideoDetails from './components/videodetails'
+import Search from './components/search'
+import Search from './components/search'
 class App extends Component {
   constructor(){
     super();
@@ -13,21 +13,18 @@ class App extends Component {
 
     }
   }
-  handleSearchSubmit = async(searchTerm) =>{
-    const response = await youtube.get('search', {params : {q : searchTerm}})
-    console.log(response)
-  }
+
   render(){
     return (
       <div className="App">
-        <Grid justify= "center" container spacing={10}>
+        <Grid justify= "center" container spacing={16}>
           <Grid item xs={12}>
-            <Grid container spacing={10}>
+            <Grid container spacing={16}>
               <Grid item xs={12}>
-                <SearchBar onsearchSubmit = {this.handleSearchSubmit} />
+                {/* Search Bar */}
               </Grid>
               <Grid item xs={8}>
-                <VideoDetails />
+                {/* videos details */}
               </Grid>
               <Grid item xs={4}>
                 {/* video list*/}
