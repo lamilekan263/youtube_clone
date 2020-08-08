@@ -10,27 +10,24 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      videos : [],
+      video : [],
       selectedVideo : null
     }
   }
   handleSearchSubmit = async (searchTerm) =>{
-    const response = await youtube.get('search', {
-      params : {
-        part : 'snippet',
-        maxResults : 5,
-        key : 'AIzaSyDuFhEMbYxVL7N1XO5-lyJ9gapmkVMJtxw',
-        q: searchTerm
+    const response = await youtube.get('search', {params : {
+      part : 'snippet',
+      maxResults : 5,
+      key : 'AIzaSyDuFhEMbYxVL7N1XO5-lyJ9gapmkVMJtxw',
+      q: searchTerm
   },
-  });
+  })
     this.setState({
-      videos : response.data.items,
-      selectedVideo : response.data.items[0]
+      video : response.data.item,
+      selectedVideo : response.data.item[0]
     })
-    console.log(this.state.videos)
   }
   render(){
-    // const { selectedVideo } = this.state
     return (
       <div className="App">
         <Grid justify= "center" container spacing={10}>

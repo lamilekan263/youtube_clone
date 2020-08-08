@@ -17,20 +17,19 @@ class App extends Component {
   handleSearchSubmit = async (searchTerm) =>{
     const response = await youtube.get('search', {
       params : {
-        part : 'snippet',
-        maxResults : 5,
-        key : 'AIzaSyDuFhEMbYxVL7N1XO5-lyJ9gapmkVMJtxw',
-        q: searchTerm
+      part : 'snippet',
+      maxResults : 5,
+      key : 'AIzaSyDuFhEMbYxVL7N1XO5-lyJ9gapmkVMJtxw',
+      q: searchTerm
   },
-  });
+  })
     this.setState({
       videos : response.data.items,
       selectedVideo : response.data.items[0]
     })
-    console.log(this.state.videos)
   }
   render(){
-    // const { selectedVideo } = this.state
+    const { selectedVideo } = this.state
     return (
       <div className="App">
         <Grid justify= "center" container spacing={10}>
@@ -40,7 +39,7 @@ class App extends Component {
                 <SearchBar onsearchSubmit = {this.handleSearchSubmit} />
               </Grid>
               <Grid item xs={8}>
-                <VideoDetails  />
+                <VideoDetails video={selectedVideo} />
               </Grid>
               <Grid item xs={4}>
                 {/* video list*/}

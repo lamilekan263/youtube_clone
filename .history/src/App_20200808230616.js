@@ -22,15 +22,15 @@ class App extends Component {
         key : 'AIzaSyDuFhEMbYxVL7N1XO5-lyJ9gapmkVMJtxw',
         q: searchTerm
   },
-  });
+  })
     this.setState({
       videos : response.data.items,
       selectedVideo : response.data.items[0]
     })
-    console.log(this.state.videos)
+    console.log(this.)
   }
   render(){
-    // const { selectedVideo } = this.state
+    const { selectedVideo } = this.state
     return (
       <div className="App">
         <Grid justify= "center" container spacing={10}>

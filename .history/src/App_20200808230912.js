@@ -27,7 +27,7 @@ class App extends Component {
       videos : response.data.items,
       selectedVideo : response.data.items[0]
     })
-    console.log(this.state.videos)
+    console.log(this.state.)
   }
   render(){
     // const { selectedVideo } = this.state
