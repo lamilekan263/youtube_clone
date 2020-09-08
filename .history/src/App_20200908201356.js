@@ -43,7 +43,7 @@ class App extends Component {
             <VideoDetails  video= { this.state.selectedVideo}/>
           </div>
           <div className="five wide column">
-            <VideoList onVideoSelect = {this.onVideoSelect}videos = {this.state.videos}/>
+          <VideoList onVideoSelect = {this.onVideoSelect}videos = {this.state.videos}/>
           </div>
         </div>    
       </div>
